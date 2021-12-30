@@ -1,5 +1,5 @@
 
-export function convertSnaps<T>(results) {
+export function convertSnaps<T>(results): T[] {
     return results.docs.map(snap => {
         return {
             id: snap.id,
