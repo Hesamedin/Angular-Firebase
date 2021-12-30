@@ -41,6 +41,39 @@ export class AboutComponent {
     }
 
 
+    onReadDoc() {
+        this.db.doc("/courses/FD0Z2mI4czqipoDOBRK5")
+            .valueChanges()
+            .subscribe(course => {
+                console.log(course);
+                // console.log(snap.payload.data());
+            });
+    }
+
+    onReadCollection() {
+        this.db.collection(
+            "/courses/QKvT04AGrbbJUSzDgYpd/lessons",
+            ref => ref.where("seqNo", "<=", 5).orderBy("seqNo")
+        ).get()
+            .subscribe(snaps => {
+                snaps.forEach(snap => {
+                    console.log(snap.id);
+                    console.log(snap.data());
+                });
+            });
+    }
+
+    onReadCollectionGroup() {
+        this.db.collectionGroup("lessons",
+                ref => ref.where("seqNo", "==", 1))
+            .get()
+            .subscribe(snaps => {
+                snaps.forEach(snap => {
+                    console.log(snap.id);
+                    console.log(snap.data());
+                });
+            });
+    }
 }
 
 

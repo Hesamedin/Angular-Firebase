@@ -5,7 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-
+    apiKey: "AIzaSyDlqTz4OsQhbg0xzf72vqepBuc4-mrhisc",
+    authDomain: "angular-firebase-e8d59.firebaseapp.com",
+    projectId: "angular-firebase-e8d59",
+    storageBucket: "angular-firebase-e8d59.appspot.com",
+    messagingSenderId: "624227152086",
+    appId: "1:624227152086:web:ea3554f26b835e3844d977"
   },
   api: {
 
