@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  useEmulators: true, // Set it to False when you are done with development locally
   firebase: {
     apiKey: "AIzaSyDlqTz4OsQhbg0xzf72vqepBuc4-mrhisc",
     authDomain: "angular-firebase-e8d59.firebaseapp.com",
