@@ -13,6 +13,10 @@ export class CoursesService {
     constructor(private db: AngularFirestore) {
     }
 
+    updateCourse(changes: Partial<Course>, courseId?: string): Observable<any> {
+        return from(this.db.doc(`courses/${courseId}`).update(changes));
+    }
+
     createCourse(newCourse: Partial<Course>, courseId?: string): Observable<any> {
         return this.db.collection(
             'courses',

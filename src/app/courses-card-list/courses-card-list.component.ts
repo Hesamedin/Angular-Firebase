@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
-import {Course} from "../model/course";
-import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
-import {EditCourseDialogComponent} from "../edit-course-dialog/edit-course-dialog.component";
+import {Course} from '../model/course';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import {EditCourseDialogComponent} from '../edit-course-dialog/edit-course-dialog.component';
 import {catchError, tap} from 'rxjs/operators';
 import {throwError} from 'rxjs';
 import {Router} from '@angular/router';
@@ -27,18 +27,16 @@ export class CoursesCardListComponent implements OnInit {
       private router: Router) {
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
 
     }
 
-    editCourse(course:Course) {
+    editCourse(course: Course): void {
 
         const dialogConfig = new MatDialogConfig();
-
         dialogConfig.disableClose = true;
         dialogConfig.autoFocus = true;
-        dialogConfig.minWidth = "400px";
-
+        dialogConfig.minWidth = '400px';
         dialogConfig.data = course;
 
         this.dialog.open(EditCourseDialogComponent, dialogConfig)
@@ -51,6 +49,9 @@ export class CoursesCardListComponent implements OnInit {
 
     }
 
+    deleteCourse(course: Course): void {
+
+    }
 }
 
 
